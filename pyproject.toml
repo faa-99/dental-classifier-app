@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "dental-classifier-frontend"
+version = "0.1.0"
+description = ""
+authors = ["faa-99 <farahakoum1999@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+streamlit = "^1.15.0"
+requests = "^2.28.1"
+pandas = "^1.5.1"
+streamlit-echarts = "^0.4.0"
+matplotlib = "^3.6.2"
+
+[tool.poetry.dev-dependencies]
+mypy = "0.942"
+black = "22.3.0"
+isort = "5.10.1"
+flake8 = "4.0.1"
+
+[tool.isort]
+profile = "black"
+lines_after_imports = "2"
+
+[tool.mypy]
+# --strict
+ignore_missing_imports = true
+# --strict end
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

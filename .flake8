@@ -1,0 +1,16 @@
+[flake8]
+ignore = E501, W503
+exclude = __init__.py
+
+########## Rules ##########
+
+# ERROR CODES
+#
+# E/W  - PEP8 errors/warnings (pycodestyle)
+# F    - linting errors (pyflakes)
+#
+# E501 - line too long (82 > 79 characters)
+# W503 - line break before binary operato
+# https://pep8.readthedocs.io/en/release-1.7.x/intro.html#error-codes
+# https://flake8.pycqa.org/en/latest/user/error-codes.html
+#
