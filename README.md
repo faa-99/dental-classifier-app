@@ -9,6 +9,13 @@ restorations, implants, appliances, and the size of the mouth and jaws.
 
 Using this app, you can train your model with specific hyper-parameters and use the pretrained model to classify an image.
 
+## Interface
+For training a custom model
+![Train](https://github.com/faa-99/dental-classifier-app/blob/main/assets/train-interface.png)
+
+For classifying an image
+![Classify](https://github.com/faa-99/dental-classifier-app/blob/main/assets/classify-interface.png)
+
 ### Local Dev Poetry
 
 To prepare the environment using poetry and python3.10

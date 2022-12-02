@@ -16,11 +16,11 @@ tab_1, tab_2, tab_3 = st.tabs(["Overview", "Train", "Classify"])
 with tab_1:
     st.title("🦷 Dental Classifier")
     st.markdown(
-        """The purpose of this project is to classify dental X-Ray images into 5 classes by proposing a deep learning model. 
-    The pre-trained VGG16 model was used as a base model, followed by a convolutional neural network model. The 
-    architecture is depicted in the figure below. Training was done using dental x-rays from the UFBA_UESC
-    dental images dataset which includes structural variations regarding the number of teeth,
-    restorations, implants, appliances, and the size of the mouth and jaws."""
+        """The purpose of this project is to classify dental X-Ray images into 5 classes by proposing a deep learning 
+        model. The pre-trained VGG16 model was used as a base model, followed by a convolutional neural network 
+        model. The architecture is depicted in the figure below. Training was done using dental x-rays from the 
+        UFBA_UESC dental images dataset which includes structural variations regarding the number of teeth, 
+        restorations, implants, appliances, and the size of the mouth and jaws. """
     )
 
     st.image(
@@ -129,14 +129,16 @@ with tab_2:
         hyper_params = {
             "EPOCHS": epochs,
             "LEARNING_RATE": learning_rate,
-            "OPTIMIZER": optimizer
+            "OPTIMIZER": optimizer,
         }
         print(f"Body of request\n{hyper_params}")
         res = requests.post(
             "http://127.0.0.1:8000/api/DentalClassifier/TrainCustomVGG16",
             json=hyper_params,
         )
-        acc_loss_plot = plot_accuracy_and_loss(res)
+        history = res.json()["model_history"]
+        print(f"the request result is {history}")
+        acc_loss_plot = plot_accuracy_and_loss(history)
         st.pyplot(acc_loss_plot)
 
 with tab_3:
