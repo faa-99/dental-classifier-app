@@ -1,6 +1,5 @@
 import os
 
-from matplotlib import image as mpimg
 from matplotlib import pyplot as plt
 from matplotlib.image import imread
 
